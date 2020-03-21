@@ -4,7 +4,7 @@ export interface Image {
   size: number, 
   type: string,
   id: number,
-  long?: number,
-  lat?: number
+  longitude?: number,
+  latitude?: number
 }
 
