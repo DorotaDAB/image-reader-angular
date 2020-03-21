@@ -1,0 +1,41 @@
+p {
+  font-size: 3vw;
+  font-weight: 600;
+}
+
+.upload-form {
+  position: relative;
+  width: 50%;
+  height: 12vw;
+  font-size: 2vw;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.upload-form:before {
+  content: attr(data-title);
+  position: absolute;
+  width: 99%;
+  padding: 5% 0;
+  opacity: 1;
+  visibility: visible;
+  text-align: center;
+  border: #808080 1px dashed;
+  border-radius: 10px;
+  background-color: #dcdcdc;
+}
+
+
+@media (min-width: 996px) {
+  p {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 3vw;
+  }
+
+  .upload-form {
+    width: 40%;
+    height: 8vw;
+    font-size: 1.5vw;
+  }
+}

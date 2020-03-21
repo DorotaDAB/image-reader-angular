@@ -1,5 +1,5 @@
-<div>
-  <app-image-importer></app-image-importer>
+<div class="main-container">
+  <app-image-importer (imageUploaded)="imageImport($event)"></app-image-importer>
   <app-image></app-image>
   <app-map></app-map>
 </div>
