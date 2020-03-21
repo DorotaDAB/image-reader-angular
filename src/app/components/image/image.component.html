@@ -1,1 +1,11 @@
-<p>image works!</p>
+<div class="item-container">
+  <img [src]="this.image.file | safeImageSource " [alt]="image.name" id="image.id"/>
+  <span> 
+    <p> File Name: </p>
+    <p>{{ image.name }}</p>
+  </span>
+  <span> 
+    <p> Size: </p>
+    <p>{{ getFormattedImageSize() }}</p>
+  </span>
+</div>

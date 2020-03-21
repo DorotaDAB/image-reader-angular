@@ -1,0 +1,33 @@
+.item-container {
+  width: 60%;
+  margin: 1% auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-container p {
+  margin: 0%;
+}
+
+.item-container p:first-of-type {
+  font-weight: bold;
+}
+
+img {
+  width: 10vw;
+}
+
+img:hover {
+  transform: scale(1.5);
+}
+
+@media (min-width: 996px) {
+  .images-container {
+    font-size: 1.2vw;
+  }
+
+  img {
+    width: 8vw;
+  }
+}

@@ -7,6 +7,7 @@ import { ImageGalleryComponent } from './components/image-gallery/image-gallery.
 import { ImageImporterComponent } from './components/image-importer/image-importer.component';
 import { MapComponent } from './components/map/map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SafeImageSourcePipe } from './model/safe-source.pipe'
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ImageComponent,
     ImageGalleryComponent,
     ImageImporterComponent,
-    MapComponent
+    MapComponent,
+    SafeImageSourcePipe
   ],
   imports: [
     BrowserModule,
