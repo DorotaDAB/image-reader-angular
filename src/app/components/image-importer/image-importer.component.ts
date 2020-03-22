@@ -33,6 +33,7 @@ export class ImageImporterComponent implements OnInit {
     }
     ++this.imageId;
     this.imageUploaded.emit(image);
+    eventData.target.value = "";
   }
 
   ngOnInit() {

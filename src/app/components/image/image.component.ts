@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter,} from '@angular/core';
 import { Image } from "../../model/image.model";
 import exifr from 'exifr';
 
@@ -9,6 +9,8 @@ import exifr from 'exifr';
 })
 export class ImageComponent implements OnInit {
   @Input() image: Image;
+
+  @Output() imageDeleted = new EventEmitter;
 
   constructor() { }
 
@@ -22,6 +24,10 @@ export class ImageComponent implements OnInit {
     this.image.latitude = gpsData.latitude;
     this.image.longitude = gpsData.longitude;
   };
+
+  onDeleteImage() {
+    this.imageDeleted.emit(this.image.id);
+  }
 
   ngOnInit() {
   }
