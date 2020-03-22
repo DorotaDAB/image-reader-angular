@@ -1,17 +1,17 @@
-<div class="item-container">
-  <img [src]="this.image.file | safeImageSource " [alt]="image.name" id="image.id" (load)="onImageLoad($event)"/>
-  <span> 
-    <p> File Name: </p>
-    <p>{{ image.name }}</p>
-  </span>
-  <span>
-    <p> GPS: </p>
-    <p *ngIf="image.longitude">Lat: {{ image.longitude.toFixed(6) }}</p>
-    <p *ngIf="image.latitude">Long: {{ image.latitude.toFixed(6) }}</p>
-  </span>
-  <span> 
-    <p> Size: </p>
-    <p>{{ getFormattedImageSize() }}</p>
-  </span>
-  <button class="delete-button" (click)="onDeleteImage()">Delete</button>
-</div>
+  <div class="item-container">
+    <img [src]="this.image.file | safeImageSource " [alt]="image.name" id="image.id" (load)="onImageLoad($event)"/>
+    <span>
+      <p> File Name: </p>
+      <p>{{ image.name }}</p>
+    </span>
+    <span>
+      <p> GPS: </p>
+      <p *ngIf="image.longitude">Lat: {{ image.longitude.toFixed(6) }}</p>
+      <p *ngIf="image.latitude">Long: {{ image.latitude.toFixed(6) }}</p>
+    </span>
+    <span>
+      <p> Size: </p>
+      <p>{{ getFormattedImageSize() }}</p>
+    </span>
+    <button class="delete-button" (click)="onDeleteImage()">Delete</button>
+  </div>

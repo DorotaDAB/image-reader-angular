@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Image } from '../../model/image.model';
-import { createOfflineCompileUrlResolver } from '@angular/compiler';
 
 @Component({
   selector: 'app-image-gallery',

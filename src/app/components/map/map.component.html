@@ -1,11 +1,12 @@
 <div class="map-container">
   <agm-map
-    [latitude]="latitude"
-    [longitude]="longitude"
-    [zoom]="zoom" >
+    [latitude]="getLatitude()"
+    [longitude]="getLongitude()"
+    [zoom]="zoom">
       <agm-marker
-      [latitude]="latitude"
-      [longitude]="longitude">
-    </agm-marker>
+        *ngFor="let image of images; let i = index"
+        [latitude]="image.latitude"
+        [longitude]="image.longitude">
+      </agm-marker>
   </agm-map>
 </div>
