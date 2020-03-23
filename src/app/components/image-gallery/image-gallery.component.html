@@ -1,9 +1,9 @@
 <div class="main-container">
- <app-image-importer (imageUploaded)="imageImport($event)"></app-image-importer>
+  <app-image-importer (imageUploaded)="imageImport($event)"></app-image-importer>
+  <app-map [images]="images"></app-map>
   <app-image 
     *ngFor="let image of images"
     [image]="image"
     (imageDeleted)="deleteImageImport($event)">
   </app-image>
-  <app-map [images]="images"></app-map>
 </div>

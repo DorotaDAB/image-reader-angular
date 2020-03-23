@@ -10,6 +10,8 @@ import { MapComponent } from './components/map/map.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SafeImageSourcePipe } from './model/safe-source.pipe';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'
 
 
 @NgModule({
@@ -24,8 +26,10 @@ import { SafeImageSourcePipe } from './model/safe-source.pipe';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
     AgmCoreModule.forRoot({
-      apiKey: '<INSERT_YOUR_GOOGLE_API_KEY>'
+      apiKey: 'INSERT_YOUR_GOOGLE_API_KEY'
     })
   ],
   providers: [],

@@ -13,5 +13,8 @@
       <p> Size: </p>
       <p>{{ getFormattedImageSize() }}</p>
     </span>
-    <button class="delete-button" (click)="onDeleteImage()">Delete</button>
+    <button mat-stroked-button color="warn" (click)="onDeleteImage($event)">
+      <span class="button-icon"><mat-icon>delete</mat-icon></span>
+      <span class="button-text">Delete</span>
+    </button>
   </div>

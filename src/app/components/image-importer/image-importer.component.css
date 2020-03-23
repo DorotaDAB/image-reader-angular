@@ -1,12 +1,9 @@
-p {
-  font-size: 3vw;
-  font-weight: 600;
-}
-
 .upload-form {
   position: relative;
+  margin: 5% auto 0 auto;
+  padding: 0;
   width: 50%;
-  height: 12vw;
+  height: 10vw;
   font-size: 2vw;
   visibility: hidden;
   cursor: pointer;
@@ -15,7 +12,7 @@ p {
 .upload-form:before {
   content: attr(data-title);
   position: absolute;
-  width: 99%;
+  width: 97%;
   padding: 5% 0;
   opacity: 1;
   visibility: visible;
@@ -25,17 +22,16 @@ p {
   background-color: #dcdcdc;
 }
 
+@media (min-width: 780px) {
+  .upload-form {
+    margin: 3% auto 0 auto;
+    font-size: 1.3vw;
+  }
+}
 
 @media (min-width: 996px) {
-  p {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font-size: 3vw;
-  }
-
   .upload-form {
-    width: 40%;
-    height: 8vw;
-    font-size: 1.5vw;
+    margin: 2% auto 0 auto;
+    font-size: 1.2vw;
   }
 }
