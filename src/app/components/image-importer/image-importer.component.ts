@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Image } from '../../model/image.model';
+import { MatSnackBar } from "@angular/material";
 
 @Component({
   selector: 'app-image-importer',
@@ -7,20 +8,25 @@ import { Image } from '../../model/image.model';
   styleUrls: ['./image-importer.component.css']
 })
 export class ImageImporterComponent implements OnInit {
-  @Output() imageUploaded = new EventEmitter<Image>();
   imageId = 1;
 
-  constructor() { }
+  @Output() imageUploaded = new EventEmitter<Image>();
+  
+  constructor(public snackBar: MatSnackBar) { }
+
+  openSnackBar(message: string) { 
+    this.snackBar.open(message, 'ok');
+  } 
 
   onChange(eventData) {
     if (eventData.target.files.length > 0) {
 			if (eventData.target.files[0].type !== "image/jpeg") {
-				alert('Not supported file type. Please choose *.jpg file.');
+        this.openSnackBar('Not supported file type. Please choose *.jpg file.');
 				return;
 			}
 			if (eventData.target.files[0].size > 1024*1024) {
-				alert('Not supported file size. Please choose files smaller than 1 MB.');
-				return
+        this.openSnackBar('File size is too large. Please choose files smaller than 1 MB.');
+				return;
       }
     }
       

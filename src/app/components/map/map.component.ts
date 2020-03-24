@@ -10,7 +10,7 @@ import { Image } from '../../model/image.model';
 export class MapComponent implements OnInit {
   latitude: number;
   longitude: number;
-  zoom = 10;
+  zoom = 15;
 
   @Input() images: Image[];
 

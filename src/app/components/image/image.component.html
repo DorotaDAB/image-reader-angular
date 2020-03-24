@@ -5,9 +5,13 @@
       <p>{{ image.name }}</p>
     </span>
     <span>
-      <p> GPS: </p>
+      <p *ngIf="image.longitude || image.longitude; else noGpsData"> GPS: </p>
       <p *ngIf="image.longitude">Lat: {{ image.longitude.toFixed(6) }}</p>
-      <p *ngIf="image.latitude">Long: {{ image.latitude.toFixed(6) }}</p>
+      <p *ngIf="image.longitude">Long: {{ image.latitude.toFixed(6) }}</p>
+      <ng-template #noGpsData>
+        <p>GPS:</p>
+        <p>not available</p>
+      </ng-template>
     </span>
     <span>
       <p> Size: </p>
