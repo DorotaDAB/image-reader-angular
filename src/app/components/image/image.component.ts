@@ -21,8 +21,8 @@ export class ImageComponent implements OnInit {
     return Math.round(this.image.size / appConfig.ONE_KB) + ' KB';
   }
 
-  openSnackBar(message: string) { 
-    this.snackBar.open(message, 'ok');
+  openSnackBar(message: string, action: string) { 
+    this.snackBar.open(message, action);
   }
 
   async onImageLoad(eventData) {
@@ -32,7 +32,7 @@ export class ImageComponent implements OnInit {
       this.image.latitude = gpsData.latitude;
       this.image.longitude = gpsData.longitude;
     } else {
-      this.openSnackBar('No GPS data availabe.');
+      this.openSnackBar('No GPS data availabe.', 'ok');
     }
   };
 
