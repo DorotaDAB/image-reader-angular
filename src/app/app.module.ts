@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatIconModule, MatSnackBarModule } from '@angular/material';
-import { SafeImageSourcePipe } from './model/safe-source.pipe';
+import { SafeImageSourcePipe } from './shared/safe-source.pipe';
+import { appConfig } from '../app/shared/app-config';
 
 import { AppComponent } from './app.component';
 import { ImageComponent } from './components/image/image.component';
@@ -28,7 +29,7 @@ import { MapComponent } from './components/map/map.component';
     MatIconModule,
     MatSnackBarModule,
     AgmCoreModule.forRoot({
-      apiKey: 'INSERT_YOUR_GOOGLE_API_KEY'
+      apiKey: appConfig.GOOGLE_MAP_API_KEY
     })
   ],
   providers: [],
