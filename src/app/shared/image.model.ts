@@ -7,4 +7,3 @@ export interface Image {
   longitude?: number,
   latitude?: number
 }
-

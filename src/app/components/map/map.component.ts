@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Image } from '../../model/image.model';
-
+import { Image } from '../../shared/image.model';
+import { appConfig } from '../../shared/app-config';
 
 @Component({
   selector: 'app-map',
@@ -35,8 +35,8 @@ export class MapComponent implements OnInit {
         this.longitude = position.coords.longitude;
       });
     } else {
-        this.latitude = 52.234334;
-        this.longitude = 21.006953;
+        this.latitude = appConfig.INITIAL_LATITUDE;
+        this.longitude = appConfig.INITIAL_LONGITUDE;
     }
   } 
 }

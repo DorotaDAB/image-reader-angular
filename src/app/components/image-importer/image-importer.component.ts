@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Image } from '../../model/image.model';
+import { Image } from '../../shared/image.model';
 import { MatSnackBar } from "@angular/material";
+import { appConfig } from '../../shared/app-config';
 
 @Component({
   selector: 'app-image-importer',
@@ -20,11 +21,11 @@ export class ImageImporterComponent implements OnInit {
 
   onChange(eventData) {
     if (eventData.target.files.length > 0) {
-			if (eventData.target.files[0].type !== "image/jpeg") {
+			if (eventData.target.files[0].type !== appConfig.FILE_TYPE) {
         this.openSnackBar('Not supported file type. Please choose *.jpg file.');
 				return;
 			}
-			if (eventData.target.files[0].size > 1024*1024) {
+			if (eventData.target.files[0].size > appConfig.ONE_KB*appConfig.ONE_KB) {
         this.openSnackBar('File size is too large. Please choose files smaller than 1 MB.');
 				return;
       }

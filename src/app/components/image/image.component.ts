@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter,} from '@angular/core';
-import { Image } from "../../model/image.model";
+import { Image } from "../../shared/image.model";
 import { MatSnackBar } from "@angular/material";
+import { appConfig } from '../../shared/app-config';
 
 import exifr from 'exifr';
 
@@ -17,7 +18,7 @@ export class ImageComponent implements OnInit {
   constructor(public snackBar: MatSnackBar) { }
 
   getFormattedImageSize(): string {
-    return Math.round(this.image.size / 1024) + ' KB';
+    return Math.round(this.image.size / appConfig.ONE_KB) + ' KB';
   }
 
   openSnackBar(message: string) { 
